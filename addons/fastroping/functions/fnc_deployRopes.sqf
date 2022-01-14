@@ -58,8 +58,8 @@ if (GVAR(requireRopeItems) && {_ropeClass != ""}) then {
     _dummy allowDamage false;
     _dummy disableCollisionWith _vehicle;
 
-    private _ropeTop = ropeCreate [_dummy, [0, 0, 0], _hook, [0, 0, 0], 0.5];
-    private _ropeBottom = ropeCreate [_dummy, [0, 0, 0], 1];
+    private _ropeTop = ropeCreate [_dummy, [0, 0, 0], _hook, [0, 0, 0], 0.5, [], [], "vtx_rope"];
+    private _ropeBottom = ropeCreate [_dummy, [0, 0, 0], 1, [], [], "vtx_rope"];
     ropeUnwind [_ropeBottom, 30, _ropelength, false];
 
     _ropeTop addEventHandler ["RopeBreak", {[_this, "top"] call FUNC(onRopeBreak)}];
